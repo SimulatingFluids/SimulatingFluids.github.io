@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="icon" href="../static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+  <script src="../static/js/bulma-carousel.min.js"></script>
+  <script src="../static/js/bulma-slider.min.js"></script>
+  <script src="../static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Simulating Fluids in Real-World Still Images</h1>
+          
+          <h1 class="title is-3 publication-title">Dataset Page</h1>
+          <h1 class="title is-5 publication-title"><a href="../index.html">Main Project Page</a></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+  <div class="hero-body">
+    <div class="container">
+        <h2 class="title is-3">1.Moving Region Rock Label for Alpha Training</h2>
+		 <table width="940" border="0">
+            <tbody>
+              <tr>
+                <td width="640"><a href="static/assets/label_sample.png"><img src="static/assets/label_sample.png" alt="" width="640" height="320"></td>
+                <td align="left">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+		We label all rocks in moving region to train our alpha.<a rel="license"href="https://drive.google.com/file/d/1WDvHbkVn-CwWXjCAZItBnUAmSvbfaed9/view?usp=sharing">Download Link</a></p>
+		<p>There are around 600 rocks for all scenes in [eulerian_data](https://eulerian.cs.washington.edu/dataset/). We use it as a warm-up for SLR training because there are few transparent fluid regions in the training set, and some warped fluid textures (especially splashes) cannot be well aligned with gt video, causing reconstruction loss only not work. More details can be seen in our paper.</p>
+		  
+      <li><code>Yellow Region</code>: Our moving region rocks label.</li>
+          <li><code>Semi-transparency Region</code>: Static Region, where motion speed is smaller than 0.1x mean motion speed.</li>
+		  <li><code>#####_#####.png.json</code>: The label.<code>#####_#####</code> points out the scene id and video clip id. The video clip w/o json file means all regions are labelled to zero.</li>
+		  
+		  
+		
+      </div>
+    </div>
+
+  <div class="hero-body">
+    <div class="container">
+        <h2 class="title is-3">2.Our Complex Liquid Animation in-the-Wild (CLAW) testset</h2>
+		
+				 <table width="940" border="0">
+            <tbody>
+              <tr>
+                <td width="640"><a href="static/assets/SLR_testset_sample.png"><img src="static/assets/SLR_testset_sample.png" alt="" width="640" height="320"></td>
+                <td align="left">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+		 
+		There are scenes containing transparent fluid regions. We use it to evaluate our SLR model. The version CLAWv1 is used in our paper, and the version CLAWv2 contains more kind of scenes and has a higher resolution.
+		<h2 class="title is-5">v1(Resolution 640x320)<a rel="license"href="https://drive.google.com/file/d/178y3M96fvYwmzZU-ngMosBBOrbJ-tDe-/view?usp=sharing">Download Link(~300MB)</a></h2>
+		
+		We follow two rules to select these videos. First, there must have transparent/semi-transparent fluid regions in the scene. Second, the motion of transparent fluid should be predicted reasonably by flownet2. 
+		<li><code>*_input.jpg</code>: The input image.</li>
+		<li><code>*.mp4</code>: The 60-frame ground-truth video.</li>
+		<li><code>*.png</code>: The visulization of flow.</li>
+		<li><code>*.flo</code>: The average flow from flownet2's.</li>
+		
+        <h2 class="title is-5">v2(Resolution 1920x1080)<a rel="license"href="Coming Soon">Download Link(Comming Soon)</a></h2>
+		A higher resolution of v1 and have more diversity(add fountains, oceans, beaches, etc.).
+        
+		
+
+      </div>
+    </div>
+
+</section>
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
